@@ -1,0 +1,11 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.vscode/
+.env
+.DS_Store
+data/processed/cleaned_housing_prices.csv
+data/processed/final_housing_prices.csv

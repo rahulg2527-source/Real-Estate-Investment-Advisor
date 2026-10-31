@@ -1,0 +1,72 @@
+
+REAL ESTATE INVESTMENT ADVISOR
+DATASET AUDIT REPORT
+==========================================
+
+Dataset:
+india_housing_prices.csv
+
+Records:
+250,000
+
+Columns:
+23
+
+DATA QUALITY:
+- Missing values: 0
+- Complete duplicate rows: 0
+- Duplicate IDs: 0
+
+FEATURE VALIDATION:
+- Year_Built + Age_of_Property = 2025
+  for all records.
+- Price_per_SqFt is derived from
+  Price_in_Lakhs / Size_in_SqFt.
+- Floor_No exceeds Total_Floors in
+  116,304 records (46.52%).
+- 2,534 zero Price_per_SqFt values
+  are explained by rounding.
+- 21 Price_per_SqFt formula mismatches.
+
+TARGET ANALYSIS:
+- Target: Price_in_Lakhs
+- Mean: 254.59
+- Standard deviation: 141.35
+- Minimum: 10.00
+- Maximum: 500.00
+- Skewness: 0.0082
+- Excess kurtosis: -1.1988
+- Chi-square uniformity test p-value: 0.2083
+
+PREDICTIVE SIGNAL:
+- Numerical correlations are approximately zero.
+- Categorical eta-squared values are negligible.
+- Mutual information scores are extremely low.
+- BHK explains approximately 0.000453%
+  of target variance.
+- Property size has almost zero correlation
+  with property price.
+
+REGRESSION DIAGNOSTIC:
+Dummy Baseline:
+MAE  = 122.3178
+RMSE = 141.1932
+R2   = -0.000001
+
+Linear Regression:
+MAE  = 122.4387
+RMSE = 141.4652
+R2   = -0.003857
+
+CONCLUSION:
+The available dataset shows insufficient
+evidence of meaningful relationships between
+property characteristics and current prices.
+
+Complex model tuning is not justified until
+additional predictive signal is established.
+
+IMPORTANT:
+The original raw dataset must remain unchanged.
+Price_per_SqFt must not be used as a predictor
+for Price_in_Lakhs because it is target-derived.
